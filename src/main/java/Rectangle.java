@@ -9,6 +9,6 @@ public class Rectangle implements HasArea{
 
     @Override
     public double computeArea() {
-        return 0;
+        return width * height;
     }
 }
