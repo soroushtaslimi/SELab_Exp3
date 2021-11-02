@@ -2,7 +2,7 @@ public class Square implements HasArea{
     private double side;
 
     public Square(double side) {
-        this.side = side;
+        this.setSide(side);
     }
 
     @Override
