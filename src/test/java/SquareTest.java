@@ -27,4 +27,16 @@ public class SquareTest {
         double area = square.computeArea();
         Assert.assertEquals(20.25, area, EPSILON);
     }
+
+    @Test
+    public void testSetSide_WHEN_negative_AND_initially_4dot3_EXPECT_IllegalArgumentException(){
+        Square square = new Square(4.3);
+        try {
+            square.setSide(-7.4);
+            Assert.fail();
+        } catch (IllegalArgumentException ignored) {
+            double side = square.getSide();
+            Assert.assertEquals(4.3, side, EPSILON);
+        }
+    }
 }
