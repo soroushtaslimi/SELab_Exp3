@@ -90,4 +90,63 @@ public class RectangleTest {
             Assert.fail();
         } catch (IllegalAccessException ignored) {}
     }
+
+
+
+
+    @Test
+    public void testGetHeight_WHEN_width_2dot82_AND_height_3dot45_EXPECT_3dot45(){
+        Rectangle rectangle = new Rectangle(2.82, 3.45);
+        double height = rectangle.getHeight();
+        Assert.assertEquals(3.45, height, EPSILON);
+    }
+
+    @Test
+    public void testGetHeight_WHEN_width_4_AND_height_4_EXPECT_4(){
+        Rectangle rectangle = new Rectangle(4, 4);
+        double height = rectangle.getHeight();
+        Assert.assertEquals(4, height, EPSILON);
+    }
+
+    @Test
+    public void testSetHeight_WHEN_8_AND_initially_6_EXPECT_8(){
+        Rectangle rectangle = new Rectangle(11, 6);
+        rectangle.setHeight(8);
+        double height = rectangle.getHeight();
+        Assert.assertEquals(8, height, EPSILON);
+    }
+
+    @Test
+    public void testSetHeight_WHEN_4dot67_AND_initially_4_EXPECT_4dot67(){
+        Rectangle rectangle = new Rectangle(9, 4);
+        rectangle.setHeight(4.67);
+        double height = rectangle.getHeight();
+        Assert.assertEquals(4.67, height, EPSILON);
+    }
+
+    @Test
+    public void testSetHeight_WHEN_4dot67_AND_initially_4dot67_EXPECT_4dot67(){
+        Rectangle rectangle = new Rectangle(9, 4.67);
+        rectangle.setHeight(4.67);
+        double height = rectangle.getHeight();
+        Assert.assertEquals(4.67, height, EPSILON);
+    }
+
+    @Test
+    public void testSetHeight_WHEN_0_AND_initially_4_EXPECT_IllegalArgumentException(){
+        Rectangle rectangle = new Rectangle(8.5, 4);
+        try {
+            rectangle.setHeight(0);
+            Assert.fail();
+        } catch (IllegalAccessException ignored) {}
+    }
+
+    @Test
+    public void testSetHeight_WHEN_negative_AND_initially_4dot3_EXPECT_IllegalArgumentException(){
+        Rectangle rectangle = new Rectangle(8.89, 4.3);
+        try {
+            rectangle.setHeight(-7.4);
+            Assert.fail();
+        } catch (IllegalAccessException ignored) {}
+    }
 }
