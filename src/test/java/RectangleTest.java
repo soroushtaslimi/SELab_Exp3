@@ -149,4 +149,20 @@ public class RectangleTest {
             Assert.fail();
         } catch (IllegalArgumentException ignored) {}
     }
+
+    @Test
+    public void testConstructor_When_negative_height_EXPECT_IllegalArgumentException(){
+        try {
+            new Rectangle(3.1, -2.3);
+            Assert.fail();
+        } catch (IllegalArgumentException ignored) {}
+    }
+
+    @Test
+    public void testConstructor_When_negative_width_EXPECT_IllegalArgumentException(){
+        try {
+            new Rectangle(-2.4, 1);
+            Assert.fail();
+        } catch (IllegalArgumentException ignored) {}
+    }
 }
