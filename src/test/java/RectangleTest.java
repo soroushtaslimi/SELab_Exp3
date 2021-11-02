@@ -79,7 +79,7 @@ public class RectangleTest {
         try {
             rectangle.setWidth(0);
             Assert.fail();
-        } catch (IllegalAccessException ignored) {}
+        } catch (IllegalArgumentException ignored) {}
     }
 
     @Test
@@ -88,7 +88,7 @@ public class RectangleTest {
         try {
             rectangle.setWidth(-7.4);
             Assert.fail();
-        } catch (IllegalAccessException ignored) {}
+        } catch (IllegalArgumentException ignored) {}
     }
 
 
@@ -138,7 +138,7 @@ public class RectangleTest {
         try {
             rectangle.setHeight(0);
             Assert.fail();
-        } catch (IllegalAccessException ignored) {}
+        } catch (IllegalArgumentException ignored) {}
     }
 
     @Test
@@ -147,6 +147,6 @@ public class RectangleTest {
         try {
             rectangle.setHeight(-7.4);
             Assert.fail();
-        } catch (IllegalAccessException ignored) {}
+        } catch (IllegalArgumentException ignored) {}
     }
 }
