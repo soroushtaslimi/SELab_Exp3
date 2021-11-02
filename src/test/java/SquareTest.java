@@ -19,7 +19,7 @@ public class SquareTest {
     }
 
     @Test
-    public void testSetSide_WHEN_4dot5_AND_initially_4_EXPECT_4dot67(){
+    public void testSetSide_WHEN_4dot5_AND_initially_4_EXPECT_4dot5(){
         Square square = new Square(4);
         square.setSide(4.5);
         double side = square.getSide();
@@ -39,4 +39,25 @@ public class SquareTest {
             Assert.assertEquals(4.3, side, EPSILON);
         }
     }
+
+    @Test
+    public void testSetSide_WHEN_zero_AND_initially_4dot3_EXPECT_IllegalArgumentException(){
+        Square square = new Square(4.3);
+        try {
+            square.setSide(0);
+            Assert.fail();
+        } catch (IllegalArgumentException ignored) {
+            double side = square.getSide();
+            Assert.assertEquals(4.3, side, EPSILON);
+        }
+    }
+
+    @Test
+    public void testConstructor_WHEN_negative_side_EXPECT_IllegalArgumentException(){
+        try {
+            new Square(-1);
+            Assert.fail();
+        } catch (IllegalArgumentException ignored) {}
+    }
+
 }
